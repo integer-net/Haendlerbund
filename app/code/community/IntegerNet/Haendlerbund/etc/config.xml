@@ -29,8 +29,29 @@
     <default>
         <integernet_haendlerbund>
             <rechtstexte>
-                <allgemeine_geschaeftsbedingungen>2</allgemeine_geschaeftsbedingungen>
+                <apiuri><![CDATA[https://hb-intern.de/www/hbm/api/live_rechtstexte.htm?apikey=%s&did=%s&AccessToken=%s&mode=%s]]></apiuri>
+                <enable_automatic_update>1</enable_automatic_update>
+                <allgemeine_geschaeftsbedingungen>0</allgemeine_geschaeftsbedingungen>
+                <rueckgaberecht_fuer_verbraucher>0</rueckgaberecht_fuer_verbraucher>
+                <widerrufsbelehrung>0</widerrufsbelehrung>
+                <bedingungen_fuer_zahlung_und_versand>0</bedingungen_fuer_zahlung_und_versand>
+                <datenschutzerklaerung>0</datenschutzerklaerung>
+                <batteriehinweise>0</batteriehinweise>
+                <mode>default</mode>
             </rechtstexte>
         </integernet_haendlerbund>
     </default>
+
+    <crontab>
+        <jobs>
+            <integernet_haendlerbund>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>integernet_haendlerbund/insertLegislativeTexts::run</model>
+                </run>
+            </integernet_haendlerbund>
+        </jobs>
+    </crontab>
 </config>
