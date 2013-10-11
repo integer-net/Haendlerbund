@@ -13,4 +13,24 @@
             <version>0.1.0</version>
         </IntegerNet_Haendlerbund>
     </modules>
+
+    <global>
+        <helpers>
+            <integernet_haendlerbund>
+                <class>IntegerNet_Haendlerbund_Helper</class>
+            </integernet_haendlerbund>
+        </helpers>
+        <models>
+            <integernet_haendlerbund>
+                <class>IntegerNet_Haendlerbund_Model</class>
+            </integernet_haendlerbund>
+        </models>
+    </global>
+    <default>
+        <integernet_haendlerbund>
+            <rechtstexte>
+                <allgemeine_geschaeftsbedingungen>2</allgemeine_geschaeftsbedingungen>
+            </rechtstexte>
+        </integernet_haendlerbund>
+    </default>
 </config>
