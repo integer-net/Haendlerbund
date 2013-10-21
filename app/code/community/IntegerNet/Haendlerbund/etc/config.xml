@@ -29,8 +29,9 @@
     <default>
         <integernet_haendlerbund>
             <rechtstexte>
-                <apiuri><![CDATA[https://hb-intern.de/www/hbm/api/live_rechtstexte.htm?apikey=%s&did=%s&AccessToken=%s&mode=%s]]></apiuri>
+                <apiuri><![CDATA[https://www.hb-intern.de/www/hbm/api/live_rechtstexte.htm?APIkey=%s&did=%s&AccessToken=%s&mode=%s]]></apiuri>
                 <enable_automatic_update>1</enable_automatic_update>
+                <api_key>1IqJF0ap6GdDNF7HKzhFyciibdml8t4v</api_key>
                 <allgemeine_geschaeftsbedingungen>0</allgemeine_geschaeftsbedingungen>
                 <rueckgaberecht_fuer_verbraucher>0</rueckgaberecht_fuer_verbraucher>
                 <widerrufsbelehrung>0</widerrufsbelehrung>

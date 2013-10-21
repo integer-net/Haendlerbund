@@ -28,7 +28,6 @@ class IntegerNet_Haendlerbund_Model_InsertLegislativeTexts extends Mage_Core_Mod
                 $id = Mage::getStoreConfig('integernet_haendlerbund/rechtstexte/'.$identifier);
                 if($id) {
                     $uri = sprintf(Mage::getStoreConfig('integernet_haendlerbund/rechtstexte/apiuri'), $apiKey, $textKey, $accessToken, $mode);
-
                     $client = new Zend_Http_Client($uri);
                     $response = $client->request();
                     $legistlativeText = $response->getBody();

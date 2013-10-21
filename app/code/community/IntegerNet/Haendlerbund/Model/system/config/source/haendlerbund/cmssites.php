@@ -16,7 +16,7 @@ class IntegerNet_Haendlerbund_Model_System_Config_Source_Haendlerbund_CmsSites
     {
         $options = array();
         $options[] = array(
-            'label' => Mage::helper('integernet_haendlerbund')->__('None'),
+            'label' => 'Nicht verwenden',
             'value' => 0,
         );
         $cmsPagesOptions = array();
