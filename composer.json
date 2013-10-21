@@ -1,0 +1,9 @@
+{
+    "name": "integer_net/haendlerbund",
+    "type": "magento-module",
+    "description": "Rechtstexte von Haendlerbund",
+    "homepage": "https://bitbucket.org/integer_net/integernet_haendlerbund",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
