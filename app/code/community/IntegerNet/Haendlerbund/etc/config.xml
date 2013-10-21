@@ -47,7 +47,7 @@
         <jobs>
             <integernet_haendlerbund>
                 <schedule>
-                    <cron_expr>*/5 * * * *</cron_expr>
+                    <cron_expr>*/60 * * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>integernet_haendlerbund/insertLegislativeTexts::run</model>
