@@ -25,6 +25,11 @@
                 <class>IntegerNet_Haendlerbund_Model</class>
             </integernet_haendlerbund>
         </models>
+        <blocks>
+            <integernet_haendlerbund>
+                <class>IntegerNet_Haendlerbund_Block</class>
+            </integernet_haendlerbund>
+        </blocks>
     </global>
     <default>
         <integernet_haendlerbund>
@@ -43,11 +48,23 @@
         </integernet_haendlerbund>
     </default>
 
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <IntegerNet_Haendlerbund before="Mage_Adminhtml">IntegerNet_Haendlerbund_Adminhtml</IntegerNet_Haendlerbund>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
     <crontab>
         <jobs>
             <integernet_haendlerbund>
                 <schedule>
-                    <cron_expr>*/60 * * * *</cron_expr>
+                    <cron_expr>0 1 * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>integernet_haendlerbund/insertLegislativeTexts::run</model>

@@ -16,7 +16,7 @@ class IntegerNet_Haendlerbund_Model_System_Config_Source_Haendlerbund_Mode
     {
         $options = array(
             array(
-                'label' => 'Standart',
+                'label' => 'Standard',
                 'value' => 'default',
             ),
             array(

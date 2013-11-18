@@ -9,9 +9,9 @@
 
 class IntegerNet_Haendlerbund_Model_InsertLegislativeTexts extends Mage_Core_Model_Abstract
 {
-	public function run()
+	public function run($forceInsert = false)
     {
-        if(Mage::getStoreConfig('integernet_haendlerbund/rechtstexte/enable_automatic_update')) {
+        if(Mage::getStoreConfig('integernet_haendlerbund/rechtstexte/enable_automatic_update') || $forceInsert) {
             $apiKey = Mage::getStoreConfig('integernet_haendlerbund/rechtstexte/api_key');
             $accessToken = Mage::getStoreConfig('integernet_haendlerbund/rechtstexte/access_token');
             $mode = Mage::getStoreConfig('integernet_haendlerbund/rechtstexte/mode');
@@ -30,7 +30,7 @@ class IntegerNet_Haendlerbund_Model_InsertLegislativeTexts extends Mage_Core_Mod
                     $uri = sprintf(Mage::getStoreConfig('integernet_haendlerbund/rechtstexte/apiuri'), $apiKey, $textKey, $accessToken, $mode);
                     $client = new Zend_Http_Client($uri);
                     $response = $client->request();
-                    $legistlativeText = $response->getBody();
+                    $legislativeText = $response->getBody();
 
                     if(stristr($id,'page_')) {
                         $id = str_replace('page_','',$id);
@@ -40,7 +40,7 @@ class IntegerNet_Haendlerbund_Model_InsertLegislativeTexts extends Mage_Core_Mod
                         $id = str_replace('block_','',$id);
                         $model = Mage::getModel('cms/page')->load($id);
                     }
-                    $model->setContent($legistlativeText);
+                    $model->setContent($legislativeText);
                     $model->save();
                 }
             }
