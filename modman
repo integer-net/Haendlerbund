@@ -1,2 +1,3 @@
 app/code/community/IntegerNet/Haendlerbund                      app/code/community/IntegerNet/Haendlerbund/
+app/design/adminhtml/default/default/template/integer_net/haendlerbund/*                      app/design/adminhtml/default/default/template/integer_net/haendlerbund/
 app/etc/modules/*                                               app/etc/modules/
