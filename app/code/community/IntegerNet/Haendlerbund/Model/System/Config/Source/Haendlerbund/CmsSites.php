@@ -31,8 +31,8 @@ class IntegerNet_Haendlerbund_Model_System_Config_Source_Haendlerbund_CmsSites
         $cmsBlocks = Mage::getModel('cms/block')->getCollection();
         foreach($cmsBlocks as $cmsBlock) {
             $cmsBlocksOptions[] = array(
-                'label' => $cmsPage->getTitle(),
-                'value' => 'block_'.$cmsPage->getId(),
+                'label' => $cmsBlock->getTitle(),
+                'value' => 'block_'.$cmsBlock->getId(),
             );
         }
         $options[] = array(
