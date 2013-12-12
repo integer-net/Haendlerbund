@@ -14,7 +14,6 @@
  * @var $this IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Apply
  */
 ?>
-
 <script type="text/javascript">
 
     IntegerNetHaendlerbundApply = Class.create();
@@ -86,8 +85,7 @@
 
     var integerNetHaendlerbundApply = new IntegerNetHaendlerbundApply();
 
-    //]]>
 </script>
-<button onclick="integerNetHaendlerbundApply.apply();" class="scalable" type="button" id="<?php echo $this->getHtmlId() ?>">
+<button onclick="integerNetHaendlerbundApply.apply();" class="scalable" type="button" id="<?php echo $this->__('Import Legal Text') ?>">
     <span><?php echo $this->escapeHtml($this->getButtonLabel()) ?></span>
 </button>

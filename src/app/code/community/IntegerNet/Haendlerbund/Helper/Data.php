@@ -84,7 +84,7 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
             'default' => $this->__('Standard'),
             'plain' => $this->__('Plain'),
             'classes' => $this->__('Classes'),
-            //'classes_head' => $this->__('Head Classes'),
+            'classes_head' => $this->__('Head Classes'),
         );
     }
 

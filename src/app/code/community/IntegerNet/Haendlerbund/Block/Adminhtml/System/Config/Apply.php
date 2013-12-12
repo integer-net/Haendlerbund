@@ -48,7 +48,6 @@ class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Apply extends Mage_A
     protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
     {
         $this->addData(array(
-            'button_label' => Mage::helper('integernet_haendlerbund')->__('Import Legal Text'),
             'html_id' => $element->getHtmlId(),
             'ajax_url' => Mage::getSingleton('adminhtml/url')->getUrl('*/integernethaendlerbund_apply/insert')
         ));
