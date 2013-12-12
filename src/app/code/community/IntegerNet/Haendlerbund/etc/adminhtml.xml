@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   IntegerNet
+ * @package    IntergerNet_Haendlerbund
+ * @copyright  Copyright (c) 2012-2013 integer_net GmbH (http://www.integer-net.de/)
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software Licence 3.0 (OSL-3.0)
+ * @author     Soeren Zorn <sz@integer-net.de>
+ * @author     Viktor Franz <vf@integer-net.de>
+ */
+
+/**
+ * Enter description here ...
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <integernet_haendlerbund translate="title" module="integernet_haendlerbund">
+                                        <title>Händlerbund</title>
+                                    </integernet_haendlerbund>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,93 @@
+<?php
+/**
+ * @category   IntegerNet
+ * @package    IntergerNet_Haendlerbund
+ * @copyright  Copyright (c) 2012-2013 integer_net GmbH (http://www.integer-net.de/)
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software Licence 3.0 (OSL-3.0)
+ * @author     Soeren Zorn <sz@integer-net.de>
+ * @author     Viktor Franz <vf@integer-net.de>
+ */
+
+/**
+ * @see IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Apply
+ * @see IntegerNet_Haendlerbund_Adminhtml_Integernethaendlerbund_ApplyController
+ * @var $this IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Apply
+ */
+?>
+
+<script type="text/javascript">
+
+    IntegerNetHaendlerbundApply = Class.create();
+    IntegerNetHaendlerbundApply.prototype = {
+
+        /**
+         *
+         */
+        initialize: function () {
+            this.lock = false;
+
+            Event.observe('config_edit_form', 'change', function () {
+                this.lock = true;
+            }.bind(this));
+        },
+
+        /**
+         *
+         */
+        apply: function () {
+            if(this.lock) {
+                this._showLockErrorMessage();
+            } else {
+                if(confirm('<?php echo $this->__('Are your sure? Destination content will be overwritten.') ?>')) {
+                    new Ajax.Request('<?php echo $this->getAjaxUrl() ?>', {
+                        onSuccess: function (response) {
+                            try {
+                                if (response.responseText) {
+                                    this._showMessage(response.responseText);
+                                }
+                            } catch (e) {
+                                this._showClientErrorMessage();
+                            }
+                        }.bind(this)
+                    });
+                }
+            }
+        },
+
+        /**
+         *
+         * @private
+         */
+        _showClientErrorMessage: function () {
+            this._showMessage('<div id="messages"><ul class="messages"><li class="error-msg"><ul><li><span><?php echo $this->__('Client Apply Error') ?></span></li></ul></li></ul></div>');
+        },
+
+        /**
+         *
+         * @private
+         */
+        _showLockErrorMessage: function () {
+            this._showMessage('<div id="messages"><ul class="messages"><li class="notice-msg"><ul><li><span><?php echo $this->__('Please save settings before process import.') ?></span></li></ul></li></ul></div>');
+        },
+
+        /**
+         *
+         * @param message
+         * @private
+         */
+        _showMessage: function (message) {
+            if ($('messages')) {
+                $('messages').replace(message);
+            } else {
+                $('content').down().insert({top: message});
+            }
+        }
+    };
+
+    var integerNetHaendlerbundApply = new IntegerNetHaendlerbundApply();
+
+    //]]>
+</script>
+<button onclick="integerNetHaendlerbundApply.apply();" class="scalable" type="button" id="<?php echo $this->getHtmlId() ?>">
+    <span><?php echo $this->escapeHtml($this->getButtonLabel()) ?></span>
+</button>

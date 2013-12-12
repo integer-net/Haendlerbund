@@ -1,9 +1,30 @@
 {
     "name": "integer-net/haendlerbund",
-    "type": "magento-module",
-    "description": "Rechtstexte von Haendlerbund",
+    "description": "Magento legal text integration from Händlerbund service",
+    "license": "OSL-3.0",
     "homepage": "https://bitbucket.org/integer_net/integernet_haendlerbund",
+    "keywords": ["magento", "haendlerbund", "händlerbund", "rechtstexte"],
+    "type": "magento-module",
+    "authors": [
+        {
+            "name": "Soeren Zorn",
+            "email": "sz@integer-net.de"
+        },
+        {
+            "name": "Viktor Franz",
+            "email": "vf@integer-net.de"
+        }
+    ],
     "require": {
         "magento-hackathon/magento-composer-installer": "*"
+    },
+    "extra": {
+        "map": [
+            ["src/app/code/community/IntegerNet/Haendlerbund", "app/code/community/IntegerNet/Haendlerbund"],
+            ["src/app/design/adminhtml/default/default/template/integernet_haendlerbund", "app/design/adminhtml/default/default/template/integernet_haendlerbund"],
+            ["src/app/etc/modules/IntegerNet_Haendlerbund.xml", "app/etc/modules/IntegerNet_Haendlerbund.xml"],
+            ["src/app/local/de_DE/IntegerNet_Haendlerbund.csv", "app/local/de_DE/IntegerNet_Haendlerbund.csv"],
+            ["src/app/local/en_US/IntegerNet_Haendlerbund.csv", "app/local/en_US/IntegerNet_Haendlerbund.csv"]
+        ]
     }
 }
