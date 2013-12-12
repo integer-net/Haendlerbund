@@ -23,8 +23,8 @@
             ["src/app/code/community/IntegerNet/Haendlerbund", "app/code/community/IntegerNet/Haendlerbund"],
             ["src/app/design/adminhtml/default/default/template/integernet_haendlerbund", "app/design/adminhtml/default/default/template/integernet_haendlerbund"],
             ["src/app/etc/modules/IntegerNet_Haendlerbund.xml", "app/etc/modules/IntegerNet_Haendlerbund.xml"],
-            ["src/app/local/de_DE/IntegerNet_Haendlerbund.csv", "app/local/de_DE/IntegerNet_Haendlerbund.csv"],
-            ["src/app/local/en_US/IntegerNet_Haendlerbund.csv", "app/local/en_US/IntegerNet_Haendlerbund.csv"]
+            ["src/app/locale/de_DE/IntegerNet_Haendlerbund.csv", "app/locale/de_DE/IntegerNet_Haendlerbund.csv"],
+            ["src/app/locale/en_US/IntegerNet_Haendlerbund.csv", "app/locale/en_US/IntegerNet_Haendlerbund.csv"]
         ]
     }
 }
