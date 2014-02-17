@@ -2,17 +2,27 @@
     "name": "integer-net/haendlerbund",
     "description": "Magento legal text integration from Händlerbund service",
     "license": "OSL-3.0",
-    "homepage": "https://bitbucket.org/integer_net/integernet_haendlerbund",
+    "homepage": "https://github.com/integer-net/Haendlerbund",
     "keywords": ["magento", "haendlerbund", "händlerbund", "rechtstexte"],
     "type": "magento-module",
     "authors": [
         {
+            "name": "integer_net GmbH",
+            "email": "info@integer-net.de",
+            "homepage": "http://www.integer-net.de/",
+            "role": "Company"
+        },
+        {
             "name": "Soeren Zorn",
-            "email": "sz@integer-net.de"
+            "email": "sz@integer-net.de",
+            "homepage": "http://www.integer-net.de/",
+            "role": "Developer"
         },
         {
             "name": "Viktor Franz",
-            "email": "vf@integer-net.de"
+            "email": "vf@integer-net.de",
+            "homepage": "http://www.integer-net.de/",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -25,6 +35,41 @@
             ["src/app/etc/modules/IntegerNet_Haendlerbund.xml", "app/etc/modules/IntegerNet_Haendlerbund.xml"],
             ["src/app/locale/de_DE/IntegerNet_Haendlerbund.csv", "app/locale/de_DE/IntegerNet_Haendlerbund.csv"],
             ["src/app/locale/en_US/IntegerNet_Haendlerbund.csv", "app/locale/en_US/IntegerNet_Haendlerbund.csv"]
-        ]
+        ],
+        "magento_connect": {
+            "name": "IntegerNet_Haendlerbund",
+            "license_uri": "http://opensource.org/licenses/osl-3.0.php",
+            "channel": "community",
+            "php_min": "5.2.0",
+            "php_max": "5.5.99",
+            "stability": "stable",
+            "content": [
+                {
+                    "type": "mage",
+                    "structure": "dir",
+                    "path": "app/code/community/IntegerNet/Haendlerbund"
+                },
+                {
+                    "type": "mage",
+                    "structure": "dir",
+                    "path": "app/design/adminhtml/default/default/template/integernet_haendlerbund"
+                },
+                {
+                    "type": "mage",
+                    "structure": "file",
+                    "path": "app/etc/modules/IntegerNet_Haendlerbund.xml"
+                },
+                {
+                    "type": "mage",
+                    "structure": "file",
+                    "path": "app/locale/de_DE/IntegerNet_Haendlerbund.csv"
+                },
+                {
+                    "type": "mage",
+                    "structure": "file",
+                    "path": "app/locale/en_US/IntegerNet_Haendlerbund.csv"
+                }
+            ]
+        }
     }
 }

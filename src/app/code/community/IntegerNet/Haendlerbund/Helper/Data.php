@@ -2,17 +2,16 @@
 /**
  * @category   IntegerNet
  * @package    IntergerNet_Haendlerbund
- * @copyright  Copyright (c) 2012-2013 integer_net GmbH (http://www.integer-net.de/)
+ * @copyright  Copyright (c) 2013-2014 integer_net GmbH (http://www.integer-net.de/)
  * @license    http://opensource.org/licenses/osl-3.0.php Open Software Licence 3.0 (OSL-3.0)
+ * @author     integer_net GmbH <info@integer-net.de>
  * @author     Soeren Zorn <sz@integer-net.de>
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
-/**
- * Enter description here ...
- */
 class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
 {
+
     /**
      * @param null $store
      * @return bool
@@ -84,7 +83,7 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
             'default' => $this->__('Standard'),
             'plain' => $this->__('Plain'),
             'classes' => $this->__('Classes'),
-            'classes_head' => $this->__('Head Classes'),
+            //'classes_head' => $this->__('Head Classes'),
         );
     }
 
