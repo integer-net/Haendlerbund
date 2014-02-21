@@ -154,6 +154,7 @@ class IntegerNet_Haendlerbund_Model_Import
         if ($model->getId()) {
             if ($modelClass == 'cms/page') {
                 $model->setData('content', $content);
+                $model->setData('stores', $model->getData('store_id'));
                 $model->save();
             } elseif ($modelClass == 'cms/block') {
                 $model->setData('content', $content);
