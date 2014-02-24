@@ -9,8 +9,13 @@
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
+
+/**
+ * Class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Field_Mapping
+ */
 class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Field_Mapping extends Mage_Adminhtml_Block_System_Config_Form_Field_Array_Abstract
 {
+
 
     /**
      *
@@ -21,20 +26,20 @@ class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Field_Mapping e
         $helper = Mage::helper('integernet_haendlerbund');
 
         $this->addColumn('legal_text', array(
-            'label' => Mage::helper('integernet_haendlerbund')->__('Legal Text'),
-            'style' => 'width:250px',
+            'label'    => Mage::helper('integernet_haendlerbund')->__('Legal Text'),
+            'style'    => 'width:250px',
             'renderer' => Mage::app()->getLayout()->createBlock('integernet_haendlerbund/adminhtml_system_config_form_renderer_select')->setOptions($helper->getLegalTextOptions()),
         ));
 
         $this->addColumn('destination', array(
-            'label' => Mage::helper('integernet_haendlerbund')->__('Destination'),
-            'style' => 'width:250px',
+            'label'    => Mage::helper('integernet_haendlerbund')->__('Destination'),
+            'style'    => 'width:250px',
             'renderer' => Mage::app()->getLayout()->createBlock('integernet_haendlerbund/adminhtml_system_config_form_renderer_selectGroup')->setOptions($helper->getDestinationOptions()),
         ));
 
         $this->addColumn('mode', array(
-            'label' => Mage::helper('integernet_haendlerbund')->__('Mode'),
-            'style' => 'width:150px',
+            'label'    => Mage::helper('integernet_haendlerbund')->__('Mode'),
+            'style'    => 'width:150px',
             'renderer' => Mage::app()->getLayout()->createBlock('integernet_haendlerbund/adminhtml_system_config_form_renderer_select')->setOptions($helper->getModeOptions()),
         ));
 
@@ -43,6 +48,7 @@ class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Field_Mapping e
 
         parent::__construct();
     }
+
 
     /**
      * @return array
@@ -79,6 +85,7 @@ class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Field_Mapping e
         return $this->_arrayRowsCache;
     }
 
+
     /**
      * @return array
      */
@@ -88,7 +95,7 @@ class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Field_Mapping e
         foreach (Mage::app()->getWebsites() as $website) {
             $options[$website->getCode()] = $website->getName();
         }
-        
+
         return $options;
     }
 }

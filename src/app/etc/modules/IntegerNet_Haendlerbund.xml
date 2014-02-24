@@ -12,10 +12,10 @@
  -->
 
 <config>
-	<modules>
-		<IntegerNet_Haendlerbund>
-			<active>true</active>
-			<codePool>community</codePool>
-		</IntegerNet_Haendlerbund>
-	</modules>
+    <modules>
+        <IntegerNet_Haendlerbund>
+            <active>true</active>
+            <codePool>community</codePool>
+        </IntegerNet_Haendlerbund>
+    </modules>
 </config>

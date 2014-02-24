@@ -9,8 +9,13 @@
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
+
+/**
+ * Class IntegerNet_Haendlerbund_Adminhtml_Integernethaendlerbund_ApplyController
+ */
 class IntegerNet_Haendlerbund_Adminhtml_Integernethaendlerbund_ApplyController extends Mage_Adminhtml_Controller_Action
 {
+
 
     /**
      * Insert legislative texts
@@ -23,16 +28,16 @@ class IntegerNet_Haendlerbund_Adminhtml_Integernethaendlerbund_ApplyController e
         try {
             $errors = Mage::getModel('integernet_haendlerbund/import')->run();
 
-            if($errors) {
+            if ($errors) {
                 $body .= '<div id="messages"><ul class="messages"><li class="error-msg"><ul>';
-                foreach($errors as $error) {
+                foreach ($errors as $error) {
                     $body .= '<li><span>' . $error . '</span></li>';
                 }
                 $body .= '</ul></li></ul></div>';
             } else {
                 $body .= '<div id="messages"><ul class="messages"><li class="success-msg"><ul><li><span>' . Mage::helper('integernet_haendlerbund')->__('Import legal text success') . '</span></li></ul></li></ul></div>';
             }
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             $body .= '<div id="messages"><ul class="messages"><li class="error-msg"><ul><li><span>' . Mage::helper('integernet_haendlerbund')->__($e->getMessage()) . '</span></li></ul></li></ul></div>';
         }
 

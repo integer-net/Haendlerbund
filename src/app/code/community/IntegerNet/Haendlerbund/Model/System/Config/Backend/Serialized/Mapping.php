@@ -9,8 +9,13 @@
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
+
+/**
+ * Class IntegerNet_Haendlerbund_Model_System_Config_Backend_Serialized_Mapping
+ */
 class IntegerNet_Haendlerbund_Model_System_Config_Backend_Serialized_Mapping extends Mage_Adminhtml_Model_System_Config_Backend_Serialized
 {
+
 
     /**
      *

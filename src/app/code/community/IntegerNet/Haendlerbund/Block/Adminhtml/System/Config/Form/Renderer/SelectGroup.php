@@ -9,8 +9,13 @@
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
+
+/**
+ * Class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Renderer_SelectGroup
+ */
 class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Renderer_SelectGroup extends Mage_Core_Block_Abstract
 {
+
 
     /**
      * @return string
@@ -21,11 +26,11 @@ class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Renderer_Select
         $options = '';
 
         foreach ($this->getOptions() as $value) {
-            if(is_array($value) && array_key_exists('label', $value) && array_key_exists('value', $value)) {
+            if (is_array($value) && array_key_exists('label', $value) && array_key_exists('value', $value)) {
 
-                if(is_array($value['value'])) {
-                    $options .= '<optgroup label="'.$value['label'].'">';
-                    foreach($value['value'] as $subValue) {
+                if (is_array($value['value'])) {
+                    $options .= '<optgroup label="' . $value['label'] . '">';
+                    foreach ($value['value'] as $subValue) {
                         $options .= '<option #{' . $this->getColumnName() . '_' . $subValue['value'] . '} value="' . $subValue['value'] . '">' . $subValue['label'] . '</option>';
                     }
                     $options .= '</optgroup>';

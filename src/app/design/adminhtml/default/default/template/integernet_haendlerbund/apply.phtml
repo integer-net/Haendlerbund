@@ -15,8 +15,10 @@
  * @var $this IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Apply
  */
 ?>
+
 <script type="text/javascript">
     //<![CDATA[
+
     IntegerNetHaendlerbundApply = Class.create();
     IntegerNetHaendlerbundApply.prototype = {
 
@@ -35,10 +37,10 @@
          *
          */
         apply: function () {
-            if(this.lock) {
+            if (this.lock) {
                 this._showLockErrorMessage();
             } else {
-                if(confirm('<?php echo $this->__('Are your sure? Destination content will be overwritten.') ?>')) {
+                if (confirm('<?php echo $this->__('Are your sure? Destination content will be overwritten.') ?>')) {
                     new Ajax.Request('<?php echo $this->getAjaxUrl() ?>', {
                         onSuccess: function (response) {
                             try {
@@ -88,6 +90,7 @@
 
     //]]>
 </script>
+
 <button onclick="integerNetHaendlerbundApply.apply();" class="scalable" type="button" id="<?php echo $this->getHtmlId() ?>">
     <span><?php echo $this->escapeHtml($this->getButtonLabel()) ?></span>
 </button>

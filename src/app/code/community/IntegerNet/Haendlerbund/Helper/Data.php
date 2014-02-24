@@ -9,11 +9,17 @@
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
+
+/**
+ * Class IntegerNet_Haendlerbund_Helper_Data
+ */
 class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
 {
 
+
     /**
      * @param null $store
+     *
      * @return bool
      */
     public function getScheduling($store = null)
@@ -21,8 +27,10 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::getStoreConfigFlag('integernet_haendlerbund/setting/scheduling', $store);
     }
 
+
     /**
      * @param null $store
+     *
      * @return string
      */
     public function getApiUrl($store = null)
@@ -30,8 +38,10 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
         return trim(Mage::getStoreConfig('integernet_haendlerbund/setting/api_uri', $store));
     }
 
+
     /**
      * @param null $store
+     *
      * @return string
      */
     public function getApiKey($store = null)
@@ -39,8 +49,10 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
         return trim(Mage::getStoreConfig('integernet_haendlerbund/setting/api_key', $store));
     }
 
+
     /**
      * @param null $store
+     *
      * @return string
      */
     public function getAccessToken($store = null)
@@ -48,16 +60,20 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
         return trim(Mage::getStoreConfig('integernet_haendlerbund/setting/access_token', $store));
     }
 
+
     /**
      * @param null $store
+     *
      * @return string
      */
     public function getMapping($store = null)
     {
         $mapping = trim(Mage::getStoreConfig('integernet_haendlerbund/setting/mapping', $store));
         $mapping = @unserialize($mapping);
+
         return is_array($mapping) ? $mapping : array();
     }
+
 
     /**
      * @return array
@@ -74,6 +90,8 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
             '134CBB4D101' => $this->__('Batteriehinweise'),
         );
     }
+
+
     /**
      * @return array
      */
@@ -81,7 +99,7 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return array(
             'default' => $this->__('Standard'),
-            'plain' => $this->__('Plain'),
+            'plain'   => $this->__('Plain'),
             'classes' => $this->__('Classes'),
             //'classes_head' => $this->__('Head Classes'),
         );

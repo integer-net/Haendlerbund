@@ -9,8 +9,13 @@
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
+
+/**
+ * Class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Renderer_Select
+ */
 class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Renderer_Select extends Mage_Core_Block_Abstract
 {
+
 
     /**
      * @return string

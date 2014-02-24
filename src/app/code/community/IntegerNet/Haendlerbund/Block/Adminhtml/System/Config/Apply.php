@@ -9,8 +9,13 @@
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
+
+/**
+ * Class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Apply
+ */
 class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Apply extends Mage_Adminhtml_Block_System_Config_Form_Field
 {
+
 
     /**
      * Set template to itself
@@ -23,33 +28,39 @@ class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Apply extends Mage_A
         if (!$this->getTemplate()) {
             $this->setTemplate('integernet_haendlerbund/apply.phtml');
         }
+
         return $this;
     }
+
 
     /**
      * Unset some non-related element parameters
      *
      * @param Varien_Data_Form_Element_Abstract $element
+     *
      * @return string
      */
     public function render(Varien_Data_Form_Element_Abstract $element)
     {
         $element->unsScope()->unsCanUseWebsiteValue()->unsCanUseDefaultValue();
+
         return parent::render($element);
     }
+
 
     /**
      * Get the button and scripts contents
      *
      * @param Varien_Data_Form_Element_Abstract $element
+     *
      * @return string
      */
     protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
     {
         $this->addData(array(
             'button_label' => Mage::helper('integernet_haendlerbund')->__('Import Legal Text'),
-            'html_id' => $element->getHtmlId(),
-            'ajax_url' => Mage::getSingleton('adminhtml/url')->getUrl('*/integernethaendlerbund_apply/insert')
+            'html_id'      => $element->getHtmlId(),
+            'ajax_url'     => Mage::getSingleton('adminhtml/url')->getUrl('*/integernethaendlerbund_apply/insert')
         ));
 
         return $this->_toHtml();

@@ -9,8 +9,13 @@
  * @author     Viktor Franz <vf@integer-net.de>
  */
 
+
+/**
+ * Class IntegerNet_Haendlerbund_Model_Import
+ */
 class IntegerNet_Haendlerbund_Model_Import
 {
+
 
     /**
      * @var IntegerNet_Haendlerbund_Helper_Data
@@ -22,6 +27,7 @@ class IntegerNet_Haendlerbund_Model_Import
      */
     protected $_cache = array();
 
+
     /**
      *
      */
@@ -30,8 +36,10 @@ class IntegerNet_Haendlerbund_Model_Import
         $this->_helper = Mage::helper('integernet_haendlerbund');
     }
 
+
     /**
      * @param Mage_Cron_Model_Schedule $cron
+     *
      * @return $this
      */
     public function schedulingRun(Mage_Cron_Model_Schedule $cron)
@@ -45,7 +53,7 @@ class IntegerNet_Haendlerbund_Model_Import
             }
         }
 
-        if($messages) {
+        if ($messages) {
             $messages = implode("\n", $messages);
             $cron->setMessages($messages);
             Mage::log(sprintf("%s\n%s", __METHOD__, $messages));
@@ -54,8 +62,10 @@ class IntegerNet_Haendlerbund_Model_Import
         return $this;
     }
 
+
     /**
      * @param array $stores
+     *
      * @return array
      */
     public function run(array $stores = null)
@@ -103,12 +113,14 @@ class IntegerNet_Haendlerbund_Model_Import
         return $errors;
     }
 
+
     /**
      * @param string $apiUri
      * @param string $apiKey
      * @param string $accessToken
      * @param string $legalText
      * @param string $mode
+     *
      * @return string
      */
     protected function _request($apiUri, $apiKey, $accessToken, $legalText, $mode)
@@ -137,9 +149,11 @@ class IntegerNet_Haendlerbund_Model_Import
         return $body;
     }
 
+
     /**
      * @param string $destination
      * @param string $content
+     *
      * @return $this
      */
     protected function _updateDestination($destination, $content)
