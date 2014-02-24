@@ -1,5 +1,5 @@
-IntegerNet_Piwik
-================
+IntegerNet_Haendlerbund
+=======================
 Magento legal text integration from Händlerbund service.
 
 Facts
