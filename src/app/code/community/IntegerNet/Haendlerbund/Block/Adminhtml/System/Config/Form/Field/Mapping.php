@@ -76,7 +76,6 @@ class IntegerNet_Haendlerbund_Block_Adminhtml_System_Config_Form_Field_Mapping e
                 }
                 $row['_id'] = $rowId;
                 $result[$rowId] = new Varien_Object($row);
-                $this->_prepareArrayRow($result[$rowId]);
             }
         }
 
