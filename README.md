@@ -61,10 +61,10 @@ Any contribution is highly appreciated. The best way to contribute code is to op
 
 Developer
 ---------
-Soeren Zorn
+Soeren Zorn  
 Viktor Franz
 
-WWW [http://www.integer-net.de/](http://www.integer-net.de/)
+WWW [http://www.integer-net.de/](http://www.integer-net.de/)  
 Twitter [@integer_net](https://twitter.com/integer_net)
 
 Licence
