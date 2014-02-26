@@ -1,6 +1,6 @@
 IntegerNet_Haendlerbund
 =======================
-Magento legal text integration from Händlerbund service.
+Magento legal text integration from Händlerbund AGB-Sservice.
 
 Facts
 -----
