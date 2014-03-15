@@ -37,3 +37,6 @@
 "Please save settings before process import.","Bitte speichre Sie zunächst die Einstellungen."
 "Yes","Ja"
 "No","Nein"
+"Active","Aktiv"
+"[Store Id: %s] Mapping is undefined.","[Store Id: %s] Zuordnung undefiniert."
+"[Store Id: %s] Access Token is undefined.","[Store Id: %s] Access Token undefiniert."

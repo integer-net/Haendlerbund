@@ -37,3 +37,6 @@
 "Please save settings before process import.","Please save settings before process import."
 "Yes","Yes"
 "No","No"
+"Active","Active"
+"[Store Id: %s] Mapping is undefined.","[Store Id: %s] Mapping is undefined."
+"[Store Id: %s] Access Token is undefined.","[Store Id: %s] Access Token is undefined."
