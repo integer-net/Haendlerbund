@@ -22,6 +22,17 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
      *
      * @return bool
      */
+    public function getIsActive($store = null)
+    {
+        return Mage::getStoreConfigFlag('integernet_haendlerbund/setting/is_active', $store);
+    }
+
+
+    /**
+     * @param null $store
+     *
+     * @return bool
+     */
     public function getScheduling($store = null)
     {
         return Mage::getStoreConfigFlag('integernet_haendlerbund/setting/scheduling', $store);
@@ -99,7 +110,7 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return array(
             'default' => $this->__('Standard'),
-            'plain'   => $this->__('Plain'),
+            'plain' => $this->__('Plain'),
             'classes' => $this->__('Classes'),
             //'classes_head' => $this->__('Head Classes'),
         );

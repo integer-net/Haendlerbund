@@ -80,32 +80,42 @@ class IntegerNet_Haendlerbund_Model_Import
 
         foreach ($stores as $store) {
 
-            $accessToken = $this->_helper->getAccessToken($store);
+            if ($this->_helper->getIsActive($store)) {
+                if ($accessToken = $this->_helper->getAccessToken($store)) {
 
-            foreach ($this->_helper->getMapping($store) as $map) {
+                    if ($maps = $this->_helper->getMapping($store)) {
 
-                $map = new Varien_Object($map);
+                        foreach ($maps as $map) {
 
-                $requestKey = sprintf('request_%s', md5($accessToken . $map->getLegalText() . $map->getMode()));
-                $updateKey = sprintf('update_%s', md5($accessToken . $map->getLegalText() . $map->getMode() . $map->getDestination()));
+                            $map = new Varien_Object($map);
 
-                if (!array_key_exists($requestKey, $this->_cache)) {
+                            $requestKey = sprintf('request_%s', md5($accessToken . $map->getLegalText() . $map->getMode()));
+                            $updateKey = sprintf('update_%s', md5($accessToken . $map->getLegalText() . $map->getMode() . $map->getDestination()));
 
-                    try {
-                        $this->_cache[$requestKey] = $this->_request($apiUri, $apiKey, $accessToken, $map->getLegalText(), $map->getMode());
-                    } catch (Exception $s) {
-                        $errors[] = $this->_helper->__('[Store Id: %s] %s', Mage::app()->getStore($store)->getId(), $s->getMessage());
+                            if (!array_key_exists($requestKey, $this->_cache)) {
+
+                                try {
+                                    $this->_cache[$requestKey] = $this->_request($apiUri, $apiKey, $accessToken, $map->getLegalText(), $map->getMode());
+                                } catch (Exception $s) {
+                                    $errors[] = $this->_helper->__('[Store Id: %s] %s', Mage::app()->getStore($store)->getId(), $s->getMessage());
+                                }
+                            }
+
+                            if (array_key_exists($requestKey, $this->_cache) && !array_key_exists($updateKey, $this->_cache)) {
+
+                                try {
+                                    $this->_updateDestination($map->getDestination(), $this->_cache[$requestKey]);
+                                    $this->_cache[$updateKey] = true;
+                                } catch (Exception $s) {
+                                    $errors[] = $this->_helper->__('[Store Id: %s] %s', Mage::app()->getStore($store)->getId(), $s->getMessage());
+                                }
+                            }
+                        }
+                    } else {
+                        $errors[] = $this->_helper->__('[Store Id: %s] Mapping is undefined.', Mage::app()->getStore($store)->getId());
                     }
-                }
-
-                if (array_key_exists($requestKey, $this->_cache) && !array_key_exists($updateKey, $this->_cache)) {
-
-                    try {
-                        $this->_updateDestination($map->getDestination(), $this->_cache[$requestKey]);
-                        $this->_cache[$updateKey] = true;
-                    } catch (Exception $s) {
-                        $errors[] = $this->_helper->__('[Store Id: %s] %s', Mage::app()->getStore($store)->getId(), $s->getMessage());
-                    }
+                } else {
+                    $errors[] = $this->_helper->__('[Store Id: %s] Access Token is undefined.', Mage::app()->getStore($store)->getId());
                 }
             }
         }
