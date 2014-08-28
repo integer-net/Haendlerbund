@@ -4,7 +4,7 @@ Magento legal text integration from Händlerbund AGB-Sservice.
 
 Facts
 -----
-- version: 1.0.0
+- version: 1.0.1
 - extension key: IntegerNet_Haendlerbund
 - [extension on GitHub](https://github.com/integer-net/Haendlerbund)
 
@@ -33,6 +33,8 @@ Compatibility
 - Magento 1.7.0.2
 - Magento 1.8.0.0
 - Magento 1.8.1.0
+- Magento 1.9.0.0
+- Magento 1.9.0.1
 
 Installation Instructions
 -------------------------
