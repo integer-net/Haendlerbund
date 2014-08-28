@@ -128,7 +128,7 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
 
         foreach (Mage::getResourceModel('cms/page_collection')->setOrder('page_id', 'ASC') as $item) {
             $options['cms_page']['value'][] = array(
-                'label' => sprintf('%s | %s', $item->getId(), $item->getTitle()),
+                'label' => sprintf('%s | %s', $item->getId(), htmlspecialchars(addslashes($item->getTitle()))),
                 'value' => sprintf('cms/page#%s', $item->getId()),
             );
         }
@@ -137,7 +137,7 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
 
         foreach (Mage::getResourceModel('cms/block_collection')->setOrder('block_id', 'ASC') as $item) {
             $options['cms_block']['value'][] = array(
-                'label' => sprintf('%s | %s', $item->getId(), $item->getTitle()),
+                'label' => sprintf('%s | %s', $item->getId(), htmlspecialchars(addslashes($item->getTitle()))),
                 'value' => sprintf('cms/block#%s', $item->getId()),
             );
         }
@@ -146,7 +146,7 @@ class IntegerNet_Haendlerbund_Helper_Data extends Mage_Core_Helper_Abstract
 
         foreach (Mage::getResourceModel('checkout/agreement_collection')->setOrder('agreement_id', 'ASC') as $item) {
             $options['agreement']['value'][] = array(
-                'label' => sprintf('%s | %s', $item->getId(), $item->getName()),
+                'label' => sprintf('%s | %s', $item->getId(), htmlspecialchars(addslashes($item->getName()))),
                 'value' => sprintf('checkout/agreement#%s', $item->getId()),
             );
         }
